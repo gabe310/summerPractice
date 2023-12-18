@@ -1,0 +1,30 @@
+Edge newEdge = new Edge(nodeu, nodev, edgeType);
+
+
+        if (edges[nodeu.getId()]== null) {
+            edges[nodeu.getId()] = new LinkedList<>(newEdge);
+        }
+        else {
+            LinkedList<Edge> node1 = edges[nodeu.getId()];
+
+            while (node1.getNext() != null) {
+                node1 = node1.getNext();
+            }
+
+            node1.setNext(new LinkedList<Edge>(newEdge));
+        }
+
+/// the top and bottom are the same thing except i add for nodeu and nodev
+
+        if (edges[nodev.getId()] == null) {
+            edges[nodev.getId()] = new LinkedList<>(newEdge);
+        }
+        else {
+            LinkedList<Edge> node2 = edges[nodev.getId()];
+
+            while (node2.getNext() != null) {
+                node2 = node2.getNext();
+            }
+
+            node2.setNext(new LinkedList<Edge>(newEdge));
+        }
